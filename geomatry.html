@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geomatry Genius</title>
+    <link href="/output/style.css" rel="stylesheet">
+</head>
+<body class="p-8">
+    <!-- intro & switch to bank page -->
+    <section class="bank-section">
+        <div class="grid grid-flow-col justify-between items-center bg-blue-100 rounded-md py-4 px-6">
+            <div class="text-part">
+                <h1 class="text-4xl text-[#111111da] mb-2">Interactive</h1>
+                <h2 class="text-xl text-[#111111b4]">Geometry Genius</h2>
+            </div>
+            <div class="button-part">
+                <button id="redirect-bank-page" class="bg-[#1090D8] px-6 py-2 text-white font-bold uppercase rounded-md mr-2">Bank</button>
+                <button id="redirect-editor-page" class="bg-[#1090D8] px-6 py-2 text-white font-bold uppercase rounded-md">Editor</button>
+            </div>
+        </div>
+    </section>
+    <!-- all geometry calculation section -->
+    <section class="mt-8">
+        <div class="grid grid-cols-7 gap-5 text-center">
+            <div class="areas grid grid-cols-3 col-span-5 gap-5 justify-center">
+                <!-- triangle card -->
+                <div class="flex flex-col justify-between px-8 py-10 border border-[#1111111a] rounded-md">
+                    <img src="images/triangle.png" class="w-44 m-auto">
+                    <div class="">
+                        <h3 id="triangle-title" class="text-xl text-[#414141] mt-6 mb-2">Triangle</h3>
+                        <P class="text-base text-[#414141]">Area (A) = 0.5 x b x h</P>
+                        <div class="grid grid-cols-2 justify-between mt-3 mb-8">
+                            <p class="text-base text-[#414141]">
+                                <input type="text" id="triangle-b-input" class="w-1/2 bg-[#F1F1F1] h-8 mr-3 text-black placeholder:text-[#414141d8] px-4 py-2.5 rounded-[4px] focus:outline-none focus:placeholder:text-transparent" placeholder="b"> cm
+                            </p>
+                            <p class="text-base text-[#414141]">
+                                <input type="text" id="triangle-h-input" placeholder="h" class="w-1/2 bg-[#F1F1F1] h-8 mr-3 text-black placeholder:text-[#414141d8] px-4 py-2.5 rounded-[4px] focus:outline-none focus:placeholder:text-transparent"> cm
+                            </p>
+                        </div>
+                    </div>
+                    <button id="triangle-btn" class="bg-[#1090D8] px-6 py-2 text-white font-bold rounded-md w-full">Calculate</button>
+                </div>
+                <!-- rectangle card -->
+                <div class="flex flex-col justify-between px-8 py-10 border border-[#1111111a] rounded-md">
+                    <img src="images/rectangle.png" class="w-56 m-auto">
+                    <div class="">
+                        <h3 id="rectangle-title" class="text-xl text-[#414141] mt-6 mb-2">Rectangle</h3>
+                        <P class="text-base text-[#414141]">Area (A) = w x I</P>
+                        <div class="grid grid-cols-2 justify-between mt-3 mb-8">
+                            <p class="text-base text-[#414141]">
+                                <input type="text" id="rectangle-w-input" class="w-1/2 bg-[#F1F1F1] h-8 mr-3 text-black placeholder:text-[#414141d8] px-4 py-2.5 rounded-[4px] focus:outline-none focus:placeholder:text-transparent" placeholder="w"> cm
+                            </p>
+                            <p class="text-base text-[#414141]">
+                                <input type="text" id="rectangle-i-input" placeholder="I" class="w-1/2 bg-[#F1F1F1] h-8 mr-3 text-black placeholder:text-[#414141d8] px-4 py-2.5 rounded-[4px] focus:outline-none focus:placeholder:text-transparent"> cm
+                            </p>
+                        </div>
+                    </div>
+                    <button id="rectangle-btn" class="bg-[#1090D8] px-6 py-2 text-white font-bold rounded-md w-full">Calculate</button>
+                </div>
+                <!-- parallelogram card -->
+                <div class="flex flex-col justify-between px-8 py-10 border border-[#1111111a] rounded-md">
+                    <img src="images/parallelogram.png" class="w-56 m-auto">
+                    <div class="">
+                        <h3 id="parallelogram-title" class="text-xl text-[#414141] mt-6 mb-2">Parallelogram</h3>
+                        <P class="text-base text-[#414141]">Area (A) = b x h</P>
+                        <div class="grid grid-cols-2 justify-between mt-3 mb-8">
+                            <p class="text-base text-[#414141]">
+                                <input type="text" id="parallelogram-b-input" class="w-1/2 bg-[#F1F1F1] h-8 mr-3 text-black placeholder:text-[#414141d8] px-4 py-2.5 rounded-[4px] focus:outline-none focus:placeholder:text-transparent" placeholder="b"> cm
+                            </p>
+                            <p class="text-base text-[#414141]">
+                                <input type="text" id="parallelogram-h-input" placeholder="h" class="w-1/2 bg-[#F1F1F1] h-8 mr-3 text-black placeholder:text-[#414141d8] px-4 py-2.5 rounded-[4px] focus:outline-none focus:placeholder:text-transparent"> cm
+                            </p>
+                        </div>
+                    </div>
+                    <button id="parallelogram-btn" class="bg-[#1090D8] px-6 py-2 text-white font-bold rounded-md w-full">Calculate</button>
+                </div>
+                <!-- rhombus card -->
+                <div class="flex flex-col justify-between px-8 py-10 border border-[#1111111a] rounded-md">
+                    <img src="images/rhombus.png" class="w-48 m-auto">
+                    <div class="">
+                        <h3 id="rhombus-title" class="text-xl text-[#414141] mt-6 mb-2">Rhombus</h3>
+                        <P class="text-base text-[#414141]">Area (A) = 0.5 x d<sub>1</sub> x d<sub>2</sub></P>
+                        <div class="grid grid-cols-2 justify-between mt-3 mb-8">
+                            <p class="text-base text-[#414141]">
+                                <input type="text" id="rhombus-d1-input" class="w-1/2 bg-[#F1F1F1] h-8 mr-3 text-black placeholder:text-[#414141d8] px-4 py-2.5 rounded-[4px] focus:outline-none focus:placeholder:text-transparent" placeholder="d1"> cm
+                            </p>
+                            <p class="text-base text-[#414141]">
+                                <input type="text" id="rhombus-d2-input" placeholder="d2" class="w-1/2 bg-[#F1F1F1] h-8 mr-3 text-black placeholder:text-[#414141d8] px-4 py-2.5 rounded-[4px] focus:outline-none focus:placeholder:text-transparent"> cm
+                            </p>
+                        </div>
+                    </div>
+                    <button id="rhombus-btn" class="bg-[#1090D8] px-6 py-2 text-white font-bold rounded-md w-full">Calculate</button>
+                </div>
+                <!-- pentagon card -->
+                <div class="flex flex-col justify-between px-8 py-10 border border-[#1111111a] rounded-md">
+                    <img src="images/pentagon.png" class="w-44 m-auto">
+                    <div class="">
+                        <h3 id="pentagon-title" class="text-xl text-[#414141] mt-6 mb-2">Pentagon</h3>
+                        <P class="text-base text-[#414141]">Area (A) = 0.5 x p x b</P>
+                        <div class="grid grid-cols-2 justify-between mt-3 mb-8">
+                            <p class="text-base text-[#414141]">
+                                <input type="text" id="pentagon-p-input" class="w-1/2 bg-[#F1F1F1] h-8 mr-3 text-black placeholder:text-[#414141d8] px-4 py-2.5 rounded-[4px] focus:outline-none focus:placeholder:text-transparent" placeholder="p"> cm
+                            </p>
+                            <p class="text-base text-[#414141]">
+                                <input type="text" id="pentagon-b-input" placeholder="b" class="w-1/2 bg-[#F1F1F1] h-8 mr-3 text-black placeholder:text-[#414141d8] px-4 py-2.5 rounded-[4px] focus:outline-none focus:placeholder:text-transparent"> cm
+                            </p>
+                        </div>
+                    </div>
+                    <button id="pentagon-btn" class="bg-[#1090D8] px-6 py-2 text-white font-bold rounded-md w-full">Calculate</button>
+                </div>
+                <!-- ellipse card -->
+                <div class="flex flex-col justify-between px-8 py-10 border border-[#1111111a] rounded-md">
+                    <img src="images/ellipse.png" class="w-56 m-auto">
+                    <div class="">
+                        <h3 id="ellipse-title" class="text-xl text-[#414141] mt-6 mb-2">Ellipse</h3>
+                        <P class="text-base text-[#414141]">Area (A) = 𝛑ab</P>
+                        <div class="grid grid-cols-2 justify-between mt-3 mb-8">
+                            <p class="text-base text-[#414141]">
+                                <input type="text" id="ellipse-a-input" class="w-1/2 bg-[#F1F1F1] h-8 mr-3 text-black placeholder:text-[#414141d8] px-4 py-2.5 rounded-[4px] focus:outline-none focus:placeholder:text-transparent" placeholder="a"> cm
+                            </p>
+                            <p class="text-base text-[#414141]">
+                                <input type="text" id="ellipse-b-input" placeholder="b" class="w-1/2 bg-[#F1F1F1] h-8 mr-3 text-black placeholder:text-[#414141d8] px-4 py-2.5 rounded-[4px] focus:outline-none focus:placeholder:text-transparent"> cm
+                            </p>
+                        </div>
+                    </div>
+                    <button id="ellipse-btn" class="bg-[#1090D8] px-6 py-2 text-white font-bold rounded-md w-full">Calculate</button>
+                </div>
+            </div>
+            <!-- Area Calculation section to show the values -->
+            <div id="add-calculation" class="col-span-2 px-8 py-10 border border-[#1111111a] rounded-md">
+                <h1 class="text-[#111111da] font-bold text-xl underline">Area Calculation</h1>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/utility.js"></script>
+    <script src="js/calculation.js"></script>
+    <!-- simple page switcher -->
+    <script>
+        const redirectBankPageElement= document.getElementById('redirect-bank-page');
+        // switch to bank page
+        redirectBankPageElement.addEventListener('click', function() {
+            window.location.href = 'bank.html';
+        })
+        const redirectEditorPageElement= document.getElementById('redirect-editor-page');
+        // switch to editor page
+        redirectEditorPageElement.addEventListener('click', function() {
+            window.location.href = 'editor.html';
+        })
+    </script>
+</body>
+</html>

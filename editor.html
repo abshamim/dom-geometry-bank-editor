@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/output/style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>My Text Editor</title>
+</head>
+
+<body class="p-8">
+    <!-- intro & switch to bank page -->
+    <section class="bank-section">
+        <div class="grid grid-flow-col justify-between items-center bg-blue-100 rounded-md py-4 px-6">
+            <div class="text-part">
+                <h1 class="text-4xl text-[#111111da] mb-2">Interactive</h1>
+                <h2 class="text-xl text-[#111111b4]">Geometry Genius</h2>
+            </div>
+            <div class="button-part">
+                <button id="redirect-home-page" class="bg-[#1090D8] px-6 py-2 text-white font-bold uppercase rounded-md mr-2">Home</button>
+                <button id="redirect-bank-page" class="bg-[#1090D8] px-6 py-2 text-white font-bold uppercase rounded-md">Bank</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="m-auto w-[900px] text-center flex flex-col justify-center align-middle items-center mt-8">
+        <div class="bg-[#94C4FE] shadow-2xl py-10 px-12 rounded-xl w-full">
+            <h1 class="font-mono font-bold text-2xl mb-4">My Text Editor</h1>
+            <div class="bg-[#BED9FD] p-6 border-[3px] border-black">
+                <div class="flex justify-between mb-4 items-center">
+                    <div>
+                        <span id="bold-btn" class="cursor-pointer px-2 py-1 hover:bg-blue-500">B</span>
+                        <span id="italic-btn" class="italic cursor-pointer px-2 py-1 hover:bg-blue-500">I</span>
+                        <span id="underline-btn" class="underline cursor-pointer px-2 py-1 hover:bg-blue-500">U</span>
+                    </div>
+                    <div class="flex ml-18 items-center">
+                        <img id="left-align" src="images/left-alignment.svg" class="cursor-pointer px-2 py-1 hover:bg-blue-500 w-8" alt="">
+                        <img id="center-align" src="images/center-alignment.svg" class="cursor-pointer px-2 py-1 hover:bg-blue-500 w-8" alt="">
+                        <img id="right-align" src="images/right-alignment.svg" class="cursor-pointer px-2 py-1 hover:bg-blue-500 w-8" alt="">
+                        <img id="justify-align" src="images/align-justify.svg" class="cursor-pointer px-2 py-1 hover:bg-blue-500 w-8" alt="">
+                    </div>
+                    <div class="flex gap-4 align-middle items-center -ml-14">
+                        <input id="font-size" type="number" name="" class="w-12 bg-transparent -mr-4 px-2 py-1 hover:bg-blue-500" value="18">
+                        <img id="uppercase-btn" src="images/uppercase.svg" class="cursor-pointer px-2 py-1 hover:bg-blue-500 w-10" alt="">
+                        <input type="color" class="" name="" id="color-input">
+                    </div>
+                </div>
+                <hr class="border-1 border-black">
+                <textarea name="" id="my-text" class="w-full resize-none mt-4 p-4 text-lg" style="height: 350px;"></textarea>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/editor.js"></script>
+    <script>
+        const redirectBankPageElement= document.getElementById('redirect-bank-page');
+        // switch to bank page
+        redirectBankPageElement.addEventListener('click', function() {
+            window.location.href = 'bank.html';
+        })
+        const redirectHomePageElement= document.getElementById('redirect-home-page');
+        // switch to home page
+        redirectHomePageElement.addEventListener('click', function() {
+            window.location.href = 'geomatry.html';
+        })
+    </script>
+</body>
+
+</html>
